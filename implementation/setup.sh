@@ -21,8 +21,6 @@ for class in $classes
 do
     echo "$class" >> data/obj.names
 done
-# echo 'license-plate' > data/obj.names
-# echo 'car' >> data/obj.names
 
 echo -e "classes = $numClasses\ntrain = data/train.txt\nvalid = data/test.txt\nnames = data/obj.names\nbackup = /content/implementation/pretrained/weight" > data/obj.data
 
