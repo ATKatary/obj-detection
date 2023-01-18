@@ -1,2 +1,2 @@
-# obj-detection
+# Obj Detection
 Customizable Object Detection using YOLO
