@@ -12,11 +12,19 @@ cp cfg/yolov3.cfg cfg/yolov3-train.cfg
 touch data/obj.names
 touch data/obj.data
 
-echo 'driver' > data/obj.names
+# TODO: write your own classes in same order as classes.txt
+classes="cars drivers"
+# TODO: change to number of classes you have
+numClasses=2
+
+for class in $classes
+do
+    echo "$class" >> data/obj.names
+done
 # echo 'license-plate' > data/obj.names
 # echo 'car' >> data/obj.names
 
-echo -e 'classes = 1\ntrain = data/train.txt\nvalid = data/test.txt\nnames = data/obj.names\nbackup = /content/implementation/pretrained/weights' > data/obj.data
+echo -e "classes = $numClasses\ntrain = data/train.txt\nvalid = data/test.txt\nnames = data/obj.names\nbackup = /content/implementation/pretrained/weight" > data/obj.data
 
 mkdir data/train
 cp -r ../implementation/data/train/* ./data/train
